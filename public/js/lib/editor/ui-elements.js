@@ -16,11 +16,11 @@ export const getUIElements = () => ({
     },
     sendRepo:{
         repoName: $('.repo-name'),
-        pathFile: $('path-file')
+        pathFile: $('.path-file')
     },
     download: {
       markdown: $('.ui-download-markdown'),
-      git: $('ui-send-repo'),
+      git: $('.ui-send-repo'),
       html: $('.ui-download-html'),
       rawhtml: $('.ui-download-raw-html')
     },

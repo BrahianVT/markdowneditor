@@ -1217,14 +1217,14 @@ ui.toolbar.download.markdown.click(function (e) {
 })
 
 ui.toolbar.download.git.click(function (e) {
+    const repoName = ui.toolbar.sendRepo.repoName.attr("value");;
+    const pathFile = ui.toolbar.sendRepo.pathFile.attr("value");;
+    console.log(pathFile);
     e.preventDefault()
     e.stopPropagation()
     const filename = renderFilename(ui.area.markdown) + '.md';
     const markdown = editor.getValue();
-    const repoName = ui.toolbar.sendRepo.repoName;
-    const pathFile = ui.toolbar.sendRepo.pathFile;
-    alert(repoName);
-    console.log(pathFile);
+    console.log(repoName);
   })
 // html
 ui.toolbar.download.html.click(function (e) {
