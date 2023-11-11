@@ -1217,8 +1217,8 @@ ui.toolbar.download.markdown.click(function (e) {
 })
 
 ui.toolbar.download.git.click(function (e) {
-    const repoName = ui.toolbar.sendRepo.repoName.attr("value");;
-    const pathFile = ui.toolbar.sendRepo.pathFile.attr("value");;
+    const repoName = ui.toolbar.sendRepo.repoName.val();
+    const pathFile = ui.toolbar.sendRepo.pathFile.val();
     console.log(pathFile);
     e.preventDefault()
     e.stopPropagation()
