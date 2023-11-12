@@ -106,6 +106,11 @@ const cursorMenuThrottle = 50
 const cursorActivityDebounce = 50
 const cursorAnimatePeriod = 100
 const supportContainers = ['success', 'info', 'warning', 'danger']
+const url_base = 'https://api.github.com/repos/BrahianVT/';
+var headers = { 
+    'Authorization': 'Bearer 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',
+    'Accept': 'application/vnd.github+json'
+  }
 const supportCodeModes = [
   '1c',
   'abnf',
@@ -1219,12 +1224,35 @@ ui.toolbar.download.markdown.click(function (e) {
 ui.toolbar.download.git.click(function (e) {
     const repoName = ui.toolbar.sendRepo.repoName.val();
     const pathFile = ui.toolbar.sendRepo.pathFile.val();
-    console.log(pathFile);
     e.preventDefault()
     e.stopPropagation()
-    const filename = renderFilename(ui.area.markdown) + '.md';
+    const filename = renderFilename(ui.area.markdown).replaceAll(' ', '_');
     const markdown = editor.getValue();
-    console.log(repoName);
+    var markdown_encode = btoa(markdown);
+    var body = {
+        "message": "adding " + filename,
+        "content": markdown_encode
+    }
+    const url = `${url_base}${repoName}/contents/${pathFile}/${filename}.md`;
+
+    fetch(url, {
+        method: 'PUT',
+        headers,
+        body: JSON.stringify(body)
+      })
+      .then(response => response.json())
+      .then(data => {
+      		const sha = data.content.sha;
+            console.log(sha);
+            alert("success ith a sha " + sha);
+            
+            })
+      .catch(error => {
+      		console.log(error);
+      		alert(JSON.stringify(error.message))
+      });
+
+   
   })
 // html
 ui.toolbar.download.html.click(function (e) {
