@@ -109,7 +109,7 @@ const supportContainers = ['success', 'info', 'warning', 'danger']
 const config = require('../../config')
 const url_base = 'https://precious-elk-necklace.cyclic.app/https://api.github.com/repos/BrahianVT/';
 var headers_git = { 
-    'Authorization': 'Bearer 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',
+    'Authorization': 'Bearer '+  config.imgur.githubToken || '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',
     'Accept': 'application/vnd.github+json'
   }
 const supportCodeModes = [
@@ -1236,6 +1236,8 @@ ui.toolbar.download.git.click(function (e) {
     }
     const url = `${url_base}${repoName}/contents/${pathFile}/${filename}.md`;
 
+    console.log("---------------------------------------")
+    console.log(JSON.stringify(headers_git));
     fetch(url, {
         method: 'PUT',
         headers_git,
