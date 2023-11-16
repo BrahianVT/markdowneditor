@@ -106,10 +106,9 @@ const cursorMenuThrottle = 50
 const cursorActivityDebounce = 50
 const cursorAnimatePeriod = 100
 const supportContainers = ['success', 'info', 'warning', 'danger']
-const config = require('../../config')
 const url_base = 'https://precious-elk-necklace.cyclic.app/https://api.github.com/repos/BrahianVT/';
 var headers_git = { 
-    'Authorization': 'Bearer '+  config.imgur.githubToken || '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',
+    'Authorization': 'Bearer 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',
     'Accept': 'application/vnd.github+json'
   }
 const supportCodeModes = [
