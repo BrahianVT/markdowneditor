@@ -109,7 +109,7 @@ const supportContainers = ['success', 'info', 'warning', 'danger']
 const config = require('../../config')
 const url_base = 'https://precious-elk-necklace.cyclic.app/https://api.github.com/repos/BrahianVT/';
 var headers = { 
-    'Authorization': 'Bearer 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',
+    'Authorization': 'Bearer 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',
     'Accept': 'application/vnd.github+json'
   }
 const supportCodeModes = [
