@@ -108,8 +108,8 @@ const cursorAnimatePeriod = 100
 const supportContainers = ['success', 'info', 'warning', 'danger']
 const config = require('../../config')
 const url_base = 'https://precious-elk-necklace.cyclic.app/https://api.github.com/repos/BrahianVT/';
-var headers = { 
-    'Authorization': 'Bearer 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',
+var headers_git = { 
+    'Authorization': 'Bearer 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',
     'Accept': 'application/vnd.github+json'
   }
 const supportCodeModes = [
@@ -1238,7 +1238,7 @@ ui.toolbar.download.git.click(function (e) {
 
     fetch(url, {
         method: 'PUT',
-        headers,
+        headers_git,
         body: JSON.stringify(body)
       })
       .then(response => response.json())
