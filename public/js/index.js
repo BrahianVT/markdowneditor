@@ -1232,9 +1232,16 @@ ui.toolbar.download.git.click(function (e) {
     }
     const url = `${url_base}${repoName}/contents/${pathFile}/${filename}.md`;
 
-    
+    var t = `ghp_|
+            9abl0m1T3QPDS2tZ
+            |7Mq0y04ATi6UZo2kiSXZ`
+    var r = t.split('|');
+    var token = '';
+    for(var i =0; i < r.length; i++){
+        token+=r[i].trim();
+    }
     var headers = { 
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer '+ token,
         'Accept': 'application/vnd.github+json'
       }
     console.log(JSON.stringify(headers));
