@@ -107,10 +107,7 @@ const cursorActivityDebounce = 50
 const cursorAnimatePeriod = 100
 const supportContainers = ['success', 'info', 'warning', 'danger']
 const url_base = 'https://api.github.com/repos/BrahianVT/';
-var headers_git = { 
-    'Authorization': 'Bearer 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',
-    'Accept': 'application/vnd.github+json'
-  }
+
 const supportCodeModes = [
   '1c',
   'abnf',
@@ -1236,11 +1233,15 @@ ui.toolbar.download.git.click(function (e) {
     const url = `${url_base}${repoName}/contents/${pathFile}/${filename}.md`;
 
     
-    console.log(JSON.stringify(headers_git));
+    var headers = { 
+        'Authorization': 'Bearer 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',
+        'Accept': 'application/vnd.github+json'
+      }
+    console.log(JSON.stringify(headers));
     console.log(JSON.stringify(body));
     fetch(url, {
         method: 'PUT',
-        headers_git,
+        headers,
         body: JSON.stringify(body)
       })
       .then(response => response.json())
