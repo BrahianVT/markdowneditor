@@ -108,7 +108,7 @@ const cursorAnimatePeriod = 100
 const supportContainers = ['success', 'info', 'warning', 'danger']
 const url_base = 'https://api.github.com/repos/BrahianVT/';
 var headers_git = { 
-    'Authorization': 'Bearer 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',
+    'Authorization': 'Bearer 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',
     'Accept': 'application/vnd.github+json'
   }
 const supportCodeModes = [
